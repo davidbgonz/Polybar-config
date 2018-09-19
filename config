@@ -1,0 +1,596 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;==========================================================
+
+[colors]
+;background = ${xrdb:color0:#222}
+background = #292D3E
+background-alt = #41485F
+;foreground = ${xrdb:color7:#222}
+foreground = #959DCB
+foreground-alt = #959DCB
+primary = #82AAFF
+secondary = #C792EA
+alert = #F07178
+BG = #292D3E
+FG = #959DCB
+FG-alt = #FFF
+BLK = #41485F
+BLK-alt = #565679
+RED = #F07178
+GRN = #C3E88D
+YLW = #FFCB6B
+BLU = #82AAFF
+MAG = #C792EA
+CYN = #89DDFF
+
+[bar/center]
+monitor = ${env:MONITOR:eDP1}
+width = 100%
+height = 35 
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 5
+border-right-size = 5
+border-left-size = 5
+border-color = #00000000
+
+module-margin = 1
+
+font-0 = "TerminessTTF Nerd Font:pixelsize=13;1"
+font-1 = "Wuncon Siji:pixelsize=14;1"
+font-2 = "Material Icons:pixelsize=12;2"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-6 = "xos4 Terminus:pixelsize=14;1"
+font-7 = "Weather Icons:size=11;2"
+
+modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
+modules-center = player 
+modules-right = weather xbacklight alsa battery date powermenu
+
+wm-name = i3
+
+tray-position = right
+tray-padding = 2
+;tray-transparent = true
+tray-background = ${colors.BLK}
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+date = ""
+gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 20 
+
+[bar/left]
+monitor = ${env:MONITOR:DVI-I-2-2}
+width = 100%
+height = 27
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 5
+border-right-size = 5
+border-left-size = 5
+border-color = #00000000
+
+module-margin = 1
+
+font-0 = "TerminessTTF Nerd Font:pixelsize=11;1"
+font-1 = "Wuncon Siji:pixelsize=12;1"
+font-2 = "Material Icons:pixelsize=10;2"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-6 = "xos4 Terminus:pixelsize=12;1"
+font-7 = "Weather Icons:size=8;1"
+
+modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
+modules-center = player 
+modules-right = weather alsa wlan eth battery date powermenu
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+date = " %Y-%m-%d"
+gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 
+
+[bar/right]
+monitor = ${env:MONITOR:DVI-I-1-1}
+width = 100%
+height = 27
+fixed-center = false
+
+background = ${colors.BG}
+foreground = ${colors.FG}
+
+line-size = 3
+line-color = #f00
+
+border-top-size = 5
+border-right-size = 5
+border-left-size = 5
+border-color = #00000000
+
+module-margin = 1
+
+font-0 = "TerminessTTF Nerd Font:pixelsize=11;1"
+font-1 = "Wuncon Siji:pixelsize=12;1"
+font-2 = "Material Icons:pixelsize=10;2"
+font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
+font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
+font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
+font-6 = "xos4 Terminus:pixelsize=12;1"
+font-7 = "Weather Icons:size=8;1"
+
+modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
+modules-center = player
+modules-right = weather alsa wlan eth battery date powermenu
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+date = " %Y-%m-%d"
+gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-foreground = ${colors.BLK-alt}
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${colors.BG}
+label-visible-underline = ${colors.FG}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-foreground = ${colors.alert}
+label-urgent-underline = ${colors.alert}
+label-urgent-padding = 2
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-offline = <label-offline>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+label-offline = "mpd offline"
+
+[module/xbacklight]
+type = internal/xbacklight
+
+; XRandR output to get values from
+; Default: the monitor defined for the running bar
+output = eDP1
+
+format = <ramp> <bar>
+label = %percentage%%
+
+ramp-font = 8 
+ramp-0 =  
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-5 = 
+ramp-6 = 
+ramp-7 = 
+ramp-8 = 
+ramp-9 = 
+ramp-10 = 
+ramp-11 = 
+ramp-12 = 
+ramp-13 = 
+ramp-14 = 
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = #fff
+bar-indicator-font = 7
+bar-fill = ─
+bar-fill-font = 7
+bar-fill-foreground = #9f78e1
+bar-empty = ─
+bar-empty-font = 7
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlp59s0
+interval = 3.0
+
+format-connected = %{A1:wicd-client -n:}<ramp-signal> <label-connected>%{A}
+format-connected-overline = #9f78e1
+label-connected = %essid%
+
+format-disconnected = %{A1:wicd-client -n:}<label-disconnected>%{A}
+format-disconnected-overline = ${colors.RED}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.RED}
+
+ramp-signal-0 = 
+ramp-signal-0-foreground = ${colors.RED}
+ramp-signal-1 = 
+ramp-signal-1-foreground = ${colors.YLW}
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/wired-network]
+type = internal/network
+interface = enp58s0u1u2i5
+interval = 3.0
+
+format-connected-overline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %{A1:wicd-client -n:}%local_ip%%{A}
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = ${root.date}
+date-alt = " %Y-%m-%d"
+
+time = " %I:%M %p"
+time-alt = " %I:%M %p"
+
+format-prefix-foreground = ${colors.foreground-alt}
+
+label = %date% %time%
+
+[module/alsa]
+type = internal/alsa
+
+;master-soundcard = hw:0
+;speaker-soundcard = hw:0
+;headphone-soundcard = hw:0
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+
+format-volume = %{A3:pavucontrol:}<ramp-volume> <bar-volume>%{A}
+label-volume-foreground = ${root.foreground}
+
+format-muted-prefix = "婢 "
+format-muted-foreground = ${colors.BLK-alt}
+label-muted = muted 
+
+master-mixer = Master
+speaker-mixer = Speaker
+headphone-mixer = Headphone
+headphone-id = 1 
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+
+ramp-headphones-0 = 
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.GRN} 
+bar-volume-foreground-1 = ${colors.GRN}
+bar-volume-foreground-2 = ${colors.GRN}
+bar-volume-foreground-3 = ${colors.GRN}
+bar-volume-foreground-4 = ${colors.YLW}
+bar-volume-foreground-5 = ${colors.YLW}
+bar-volume-foreground-6 = ${colors.alert}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 7
+bar-volume-fill = ─
+bar-volume-fill-font = 7
+bar-volume-empty = ─
+bar-volume-empty-font = 7
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 98
+
+format-charging = %{A1:tlpui:}<animation-charging> <label-charging>%{A}
+format-charging-overline = ${colors.RED}
+
+format-discharging = %{A1:tlpui:}<ramp-capacity> <label-discharging>%{A}
+format-discharging-overline = ${colors.YLW}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.GRN}
+format-full-overline = ${colors.GRN}
+
+#ramp-capacity-0 =  
+#ramp-capacity-1 = 
+#ramp-capacity-2 = 
+#ramp-capacity-3 = 
+#ramp-capacity-4 = 
+ramp-capacity-0 =  
+ramp-capacity-0-foreground = ${colors.RED}
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = ${colors.RED}
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = ${colors.RED}
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = ${colors.RED}
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = ${colors.YLW}
+ramp-capacity-5 = 
+ramp-capacity-5-foreground = ${colors.YLW}
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-9-foreground = ${colors.GRN}
+ramp-capacity-10 = 
+ramp-capacity-10-foreground = ${colors.GRN}
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+#animation-charging-0 = 
+#animation-charging-1 = 
+#animation-charging-2 = 
+#animation-charging-3 = 
+#animation-charging-4 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature-c%
+label-warn = %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1 
+format-margin = 0
+format-background = #202431
+
+label-open = "⏻"
+label-open-foreground = ${colors.alert}
+label-open-padding = 2
+label-close = "   cancel"
+label-close-foreground = ${colors.alert}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = "power off  "
+menu-0-1-exec = menu-open-2
+
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = "reboot  "
+menu-1-1-exec = systemctl reboot
+
+menu-2-0 = power off
+menu-2-0-exec = systemctl poweroff
+menu-2-1 = "cancel  "
+menu-2-1-exec = menu-open-0
+
+[module/trash]
+type = custom/script
+exec = ~/.config/polybar/trash.sh
+exec-if = "ls -U -1 ~/.local/share/Trash/files | wc -l | grep -v 0"
+interval = 5 
+label-active-font = 3 
+;label =  %output%
+label = " "
+label-foreground = ${colors.RED}
+click-left = ~/.config/polybar/trash.sh --clean
+
+[module/weather]
+type = custom/script
+exec = ~/.config/polybar/weather.sh
+interval = 900
+
+[module/archUpdates]
+type = custom/script
+exec = ~/.config/polybar/archUpdates.sh
+interval = 300
+
+[module/player]
+type = custom/script
+exec = ~/.config/polybar/player-mpris-tail.py
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+tail = true
+click-left = ~/.config/polybar/playerCtrl.sh previous
+click-right = ~/.config/polybar/playerCtrl.sh next
+click-middle = ~/.config/polybar/playerCtrl.sh play-pause
+label-maxlen = 50
+
+[module/gpmdp-bar]
+type = custom/script
+exec = ${root.gpmdp-bar-command} 
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+interval = 1
+
+[module/gpmdp-prev]
+type = custom/script
+exec = ~/.config/polybar/gpmdp-ctrl.sh setPrev
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+click-left = ~/.config/polybar/gpmdp-ctrl.sh prev
+interval = 1
+
+[module/gpmdp-playPause]
+type = custom/script
+exec = ~/.config/polybar/gpmdp-ctrl.sh setPlayPause
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+click-left = ~/.config/polybar/gpmdp-ctrl.sh playPause
+interval = 1
+
+[module/gpmdp-next]
+type = custom/script
+exec = ~/.config/polybar/gpmdp-ctrl.sh setNext
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+click-left = ~/.config/polybar/gpmdp-ctrl.sh next
+interval = 1
+
+[module/gpmdp-repeat]
+type = custom/script
+exec = ~/.config/polybar/gpmdp-ctrl.sh setRepeat
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+click-left = ~/.config/polybar/gpmdp-ctrl.sh toggleRepeat
+interval = 1
+
+[module/gpmdp-shuffle]
+type = custom/script
+exec = ~/.config/polybar/gpmdp-ctrl.sh setShuffle
+exec-if = ~/.config/polybar/gpmdp-bar.sh status
+click-left = ~/.config/polybar/gpmdp-ctrl.sh toggleShuffle
+interval = 1
+
+[module/eth]
+type = custom/script
+exec = ~/.config/polybar/eth.sh
+format-overline = ${colors.BLU}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini

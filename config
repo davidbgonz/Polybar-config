@@ -113,7 +113,7 @@ font-7 = "Weather Icons:size=8;1"
 
 modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
 modules-center = player 
-modules-right = weather alsa wlan eth battery date powermenu
+modules-right = weather alsa wlan eth battery date caffeine
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -504,6 +504,29 @@ menu-2-0 = power off
 menu-2-0-exec = systemctl poweroff
 menu-2-1 = "cancel  "
 menu-2-1-exec = menu-open-0
+
+[module/caffeine]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1 
+format-margin = 0
+format-background = #202431
+
+label-open = 
+label-open-padding = 2
+label-open-foreground = ${colors.alert}
+label-close = "  "
+label-close-foreground = ${colors.alert}
+label-separator = " "
+
+menu-0-0 = 
+menu-0-0-exec = caffeine -a
+menu-0-1 = 
+menu-0-1-exec = caffeine -d
+menu-0-2 = "  "
+menu-0-2-exec = caffeine kill
 
 [module/trash]
 type = custom/script

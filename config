@@ -522,9 +522,9 @@ label-close-foreground = ${colors.alert}
 label-separator = " "
 
 menu-0-0 = 
-menu-0-0-exec = caffeine -a
+menu-0-0-exec = "caffeine kill && caffeine -a &"
 menu-0-1 = 
-menu-0-1-exec = caffeine -d
+menu-0-1-exec = "caffeine kill && caffeine -d &"
 menu-0-2 = "  "
 menu-0-2-exec = caffeine kill
 

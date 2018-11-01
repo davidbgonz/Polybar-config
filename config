@@ -64,7 +64,7 @@ font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
 font-6 = "xos4 Terminus:pixelsize=14;1"
-font-7 = "Weather Icons:size=11;2"
+font-7 = "Weather Icons:pixelsize=11;2"
 
 modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
 modules-center = player 
@@ -109,7 +109,7 @@ font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
 font-6 = "xos4 Terminus:pixelsize=12;1"
-font-7 = "Weather Icons:size=8;1"
+font-7 = "Weather Icons:pixelsize=8;1"
 
 modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
 modules-center = player 
@@ -147,7 +147,7 @@ font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-5 = "Font Awesome 5 Brands:pixelsize=8;1"
 font-6 = "xos4 Terminus:pixelsize=12;1"
-font-7 = "Weather Icons:size=8;1"
+font-7 = "Weather Icons:pixelsize=8;1"
 
 modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
 modules-center = player

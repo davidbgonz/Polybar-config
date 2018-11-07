@@ -68,7 +68,7 @@ font-7 = "Weather Icons:pixelsize=11;2"
 
 modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
 modules-center = player 
-modules-right = weather xbacklight alsa battery date powermenu
+modules-right = weather backlight-acpi alsa battery date powermenu
 
 wm-name = i3
 

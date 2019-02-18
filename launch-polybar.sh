@@ -15,13 +15,13 @@ case $DESKTOP in
 				export MONITOR=$m
 				polybar --reload center -c ~/.config/polybar/config &
 			fi
-			if [ $m == 'HDMI-1' -o $m == 'DVI-I-1-1' ]; then
+			if [ $m == 'DVI-I-1-1' ]; then
 				export MONITOR_LEFT=$m
-				polybar --reload right -c ~/.config/polybar/config &
-			fi
-			if [ $m == 'DVI-I-2-2' ]; then
-				export MONITOR_RIGHT=$m
 				polybar --reload left -c ~/.config/polybar/config &
+			fi
+			if [ $m == 'HDMI-1' -o $m == 'DVI-I-2-2' ]; then
+				export MONITOR_RIGHT=$m
+				polybar --reload right -c ~/.config/polybar/config &
 			fi
 		done
 	fi

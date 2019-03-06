@@ -548,6 +548,7 @@ interval = 900
 type = custom/script
 exec = ~/.config/polybar/archUpdates.sh
 interval = 300
+click-left = pamac-manager --updates
 
 [module/player]
 type = custom/script

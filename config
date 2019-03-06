@@ -50,9 +50,9 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-top-size = 5
-border-right-size = 5
-border-left-size = 5
+border-top-size = 10
+border-right-size = 10
+border-left-size = 10
 border-color = #00000000
 
 module-margin = 1
@@ -95,9 +95,9 @@ foreground = ${colors.FG}
 line-size = 3
 line-color = #f00
 
-border-top-size = 5
-border-right-size = 5
-border-left-size = 5
+border-top-size = 10
+border-right-size = 10
+border-left-size = 10
 border-color = #00000000
 
 module-margin = 1
@@ -133,9 +133,9 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-top-size = 5
-border-right-size = 5
-border-left-size = 5
+border-top-size = 10
+border-right-size = 10
+border-left-size = 10
 border-color = #00000000
 
 module-margin = 1

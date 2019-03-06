@@ -551,13 +551,14 @@ interval = 300
 
 [module/player]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py
+exec = ~/.config/polybar/player-mpris-tail.py -f '{artist} - {:t30:{title}:}'
 exec-if = ~/.config/polybar/gpmdp-bar.sh status
 tail = true
+label = %output%
 click-left = ~/.config/polybar/playerCtrl.sh previous
 click-right = ~/.config/polybar/playerCtrl.sh next
 click-middle = ~/.config/polybar/playerCtrl.sh play-pause
-label-maxlen = 50
+;label-maxlen = 50
 
 [module/gpmdp-bar]
 type = custom/script

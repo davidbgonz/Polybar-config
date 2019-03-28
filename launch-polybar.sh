@@ -16,11 +16,10 @@ case $DESKTOP in
 				export TRAY_POS_MAIN="right"
 			elif [ $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
 				export EXT_MONITOR_LEFT="$m"
-			elif [ $m == 'DVI-I-2-2' ]; then
-				export EXT_MONITOR_RIGHT="$m"
-				# Sets left polybar (currently EXT_MONITOR_LEFT) with tray and unset's laptop montitor tray position
 				export TRAY_POS_ALT="right"
 				unset TRAY_POS_MAIN
+			elif [ $m == 'DVI-I-2-2' ]; then
+				export EXT_MONITOR_RIGHT="$m"
 			fi
 		done
 	fi

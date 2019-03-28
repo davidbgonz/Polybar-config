@@ -39,7 +39,7 @@ MAG = #C792EA
 CYN = #89DDFF
 
 [bar/center]
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR}
 width = 100%
 height = 35 
 fixed-center = false
@@ -73,9 +73,9 @@ modules-right = weather backlight-acpi alsa wlan battery date powermenu
 
 wm-name = i3
 
-#tray-position = right
-#tray-padding = 2
-#tray-background = ${colors.BLK}
+tray-position = ${env:TRAY_POS_MAIN}
+tray-padding = 2
+tray-background = ${colors.BLK}
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -84,7 +84,7 @@ date =
 gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 20 
 
 [bar/left]
-monitor = ${env:EXT_MONITOR_LEFT:HDMI-1}
+monitor = ${env:EXT_MONITOR_LEFT}
 width = 100%
 height = 27
 fixed-center = false
@@ -116,7 +116,7 @@ modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-n
 modules-center = player
 modules-right = weather alsa wlan eth battery date powermenu
 
-tray-position = right
+tray-position = ${env:TRAY_POS_ALT}
 tray-padding = 2
 tray-background = ${colors.BLK}
 
@@ -127,7 +127,7 @@ date = " %Y-%m-%d"
 gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 
 
 [bar/right]
-monitor = ${env:EXT_MONITOR_RIGHT:DVI-I-2-2}
+monitor = ${env:EXT_MONITOR_RIGHT}
 width = 100%
 height = 27
 fixed-center = false

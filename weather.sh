@@ -24,23 +24,24 @@ get_icon() {
     echo $icon
 }
 
-# Include API Key variable (KEY) for OpenWeatherMap
+# Include API Key variable (OWM_KEY) for OpenWeatherMap
+# Include API Key variable (MLS_KEY) for Mozilla Location Services
 source ~/.config/polybar/weather-auth.sh
 CITY=""
 UNITS="imperial"
 SYMBOL="°"
 
 if [ ! -z $CITY ]; then
-    weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$KEY&id=$CITY&units=$UNITS")
-    # weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$KEY&id=$CITY&units=$UNITS&cnt=1")
+    weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?APPID=$OWM_KEY&id=$CITY&units=$UNITS")
+    # weather=$(curl -sf "http://api.openweathermap.org/data/2.5/forecast?APPID=$OWM_KEY&id=$CITY&units=$UNITS&cnt=1")
 else
-    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=geoclue)
+    location=$(curl -sf https://location.services.mozilla.com/v1/geolocate?key=$MLS_KEY)
 
     if [ ! -z "$location" ]; then
         location_lat="$(echo "$location" | jq '.location.lat')"
         location_lon="$(echo "$location" | jq '.location.lng')"
 
-        weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
+        weather=$(curl -sf "http://api.openweathermap.org/data/2.5/weather?appid=$OWM_KEY&lat=$location_lat&lon=$location_lon&units=$UNITS")
     fi
 fi
 

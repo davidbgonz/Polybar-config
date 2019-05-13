@@ -39,7 +39,7 @@ MAG = #C792EA
 CYN = #89DDFF
 
 [bar/center]
-monitor = ${env:MONITOR}
+monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 35 
 fixed-center = false

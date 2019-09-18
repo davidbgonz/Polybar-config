@@ -311,8 +311,8 @@ type = internal/network
 interface = wlp59s0
 interval = 3.0
 
-#format-connected = %{A1:wicd-client -n:}<ramp-signal> <label-connected>%{A}
-format-connected = %{A1:urxvt -e nmtui:}<ramp-signal> <label-connected>%{A}
+format-connected = %{A1:wicd-client -n:}<ramp-signal> <label-connected>%{A}
+#format-connected = %{A1:urxvt -e nmtui:}<ramp-signal> <label-connected>%{A}
 format-connected-overline = #9f78e1
 label-connected = %essid%
 

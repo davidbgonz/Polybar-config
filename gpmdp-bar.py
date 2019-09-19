@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from pathlib import Path
 import time, sys
 import argparse
 import json
@@ -29,7 +30,7 @@ def update_progress(progress):
     sys.stdout.flush()
 
 # Read gpmdp playback.json 
-with open('/home/david/.config/Google Play Music Desktop Player/json_store/playback.json') as json_file:
+with open(str(Path.home()) + '/.config/Google Play Music Desktop Player/json_store/playback.json') as json_file:
     data = json.load(json_file)
     if data["time"]["total"] != 0:
         time_current = data["time"]["current"]

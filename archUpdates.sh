@@ -15,7 +15,7 @@ fi
 updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
-    echo "%{A1:pamac-updater:} $updates_arch  $updates_aur%{A}"
+    echo "%{A1:pamac-manager --updates:} $updates_arch  $updates_aur%{A}"
     #echo " $updates_arch  $updates_aur"
     #echo " $updates_arch  $updates_aur"
 else

@@ -73,7 +73,7 @@ modules-right = weather backlight-acpi alsa eth wlan battery xkeyboard date powe
 
 wm-name = i3
 
-tray-position = ${env:TRAY_POS_MAIN}
+tray-position = ${env:TRAY_POS_MAIN:none}
 tray-padding = 2
 tray-background = ${colors.BLK}
 
@@ -116,7 +116,7 @@ modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-n
 modules-center = player
 modules-right = weather alsa battery xkeyboard date powermenu
 
-tray-position = ${env:TRAY_POS_ALT}
+tray-position = ${env:TRAY_POS_ALT:none}
 tray-padding = 2
 tray-background = ${colors.BLK}
 
@@ -185,11 +185,12 @@ format-prefix-overline = ${colors.BLU}
 label-layout = %name%
 label-layout-overline = ${colors.BLU}
 
-label-indicator = %name%
+label-indicator-on = %name%
 label-indicator-padding = 2
 label-indicator-margin = 1
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
 label-indicator-on-capslock = 
 
 [module/filesystem]
@@ -370,15 +371,15 @@ format-prefix-foreground = ${colors.foreground-alt}
 label = %date% %time%
 
 [module/alsa]
-;type = internal/alsa
-type = internal/pulseaudio
+type = internal/alsa
+;type = internal/pulseaudio
 
-;master-soundcard = hw:0
-;speaker-soundcard = hw:0
-;headphone-soundcard = hw:0
-master-soundcard = default
-speaker-soundcard = default
-headphone-soundcard = default
+master-soundcard = hw:0
+speaker-soundcard = hw:0
+headphone-soundcard = hw:0
+;master-soundcard = default
+;speaker-soundcard = default
+;headphone-soundcard = default
 
 format-volume = %{A3:pavucontrol:}<ramp-volume> <bar-volume>%{A}
 label-volume-foreground = ${root.foreground}

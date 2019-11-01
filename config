@@ -318,8 +318,8 @@ type = internal/network
 interface = wlp59s0
 interval = 3.0
 
-format-connected = %{A1:wicd-client -n:}<ramp-signal> <label-connected>%{A}
-#format-connected = %{A1:urxvt -e nmtui:}<ramp-signal> <label-connected>%{A}
+#format-connected = %{A1:wicd-client -n:}<ramp-signal> <label-connected>%{A}
+format-connected = %{A1:urxvt -e nmtui:}<ramp-signal> <label-connected>%{A}
 format-connected-overline = #9f78e1
 label-connected = %essid%
 
@@ -346,7 +346,8 @@ interval = 3.0
 format-connected-overline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %{A1:wicd-client -n:}%local_ip%%{A}
+#label-connected = %{A1:wicd-client -n:}%local_ip%%{A}
+label-connected = %{A1:urxvt -e nmtui:}%local_ip%%{A}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -369,7 +370,8 @@ format-prefix-foreground = ${colors.foreground-alt}
 label = %date% %time%
 
 [module/alsa]
-type = internal/alsa
+;type = internal/alsa
+type = internal/pulseaudio
 
 ;master-soundcard = hw:0
 ;speaker-soundcard = hw:0

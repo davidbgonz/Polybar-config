@@ -525,6 +525,7 @@ menu-2-1-exec = menu-open-0
 
 [module/caffeine]
 type = custom/menu
+trail = false
 
 expand-right = true
 
@@ -540,9 +541,9 @@ label-close-foreground = ${colors.alert}
 label-separator = " "
 
 menu-0-0 = 
-menu-0-0-exec = "caffeine kill && caffeine -a &"
+menu-0-0-exec = "caffeine kill; caffeine -a &"
 menu-0-1 = 
-menu-0-1-exec = "caffeine kill && caffeine -d &"
+menu-0-1-exec = "caffeine kill; caffeine -d &"
 menu-0-2 = "  "
 menu-0-2-exec = caffeine kill
 

@@ -69,7 +69,7 @@ font-8 = "material\-wifi:size=12;2"
 
 modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
 modules-center = player 
-modules-right = weather backlight-acpi alsa eth wlan battery xkeyboard date powermenu
+modules-right = ${env:RIGHT_MODULES_MAIN:weather backlight-acpi alsa battery xkeyboard date powermenu}
 
 wm-name = i3
 
@@ -377,7 +377,7 @@ type = internal/alsa
 master-soundcard = hw:0
 speaker-soundcard = hw:0
 headphone-soundcard = hw:0
-;master-soundcard = default
+;master-soundcard = default 
 ;speaker-soundcard = default
 ;headphone-soundcard = default
 

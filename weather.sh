@@ -27,7 +27,7 @@ get_icon() {
 # Include API Key variable (OWM_KEY) for OpenWeatherMap
 # Include API Key variable (MLS_KEY) for Mozilla Location Services
 source ~/.config/polybar/weather-auth.sh
-CITY=""
+CITY="4155966"
 UNITS="imperial"
 SYMBOL="°"
 

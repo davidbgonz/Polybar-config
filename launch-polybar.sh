@@ -13,7 +13,7 @@ case $DESKTOP in
 	i3)
 	if type "xrandr" > /dev/null; then
 		for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-			if [ $m == 'eDP-1' ]; then
+			if [ $m == 'eDP-1' -o $m == 'DP-1-3' ]; then
 				export MONITOR="$m"
 				export TRAY_POS_MAIN="right"
 				export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery xkeyboard date powermenu"

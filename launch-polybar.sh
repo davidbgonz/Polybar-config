@@ -15,8 +15,13 @@ case $DESKTOP in
 		for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
 			if [ $m == 'eDP-1' -o $m == 'DP-1-3' ]; then
 				export MONITOR="$m"
-				export TRAY_POS_MAIN="right"
 				export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery xkeyboard date powermenu"
+
+				if [ $m == 'eDP-1' ]; then
+					export TRAY_POS_MAIN="right"
+				else
+					unset TRAY_POS_MAIN
+				fi
 			elif [ $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
 				export EXT_MONITOR_LEFT="$m"
 				export TRAY_POS_ALT="right"

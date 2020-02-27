@@ -30,7 +30,7 @@ setIcon() {
             echo "綾"
             ;;
         shuffle)
-            echo "咽"
+            echo "咽 "
             ;;
     esac
 }

@@ -37,11 +37,11 @@ case $DESKTOP in
 esac
 
 if [ -n "$MONITOR" ]; then
-	polybar --reload center -c ~/.config/polybar/config &
+	polybar --reload center -c ~/.config/polybar/config 2>/var/log/polybar/polybar-center.log &
 fi
 if [ -n "$EXT_MONITOR_LEFT" ]; then
-	polybar --reload left -c ~/.config/polybar/config &
+	polybar --reload left -c ~/.config/polybar/config 2>/var/log/polybar/polybar-left.log &
 fi
 if [ -n "$EXT_MONITOR_RIGHT" ]; then
-	polybar --reload right -c ~/.config/polybar/config &
+	polybar --reload right -c ~/.config/polybar/config 2>/var/log/polybar/polybar-right.log &
 fi

@@ -73,9 +73,9 @@ modules-right = ${env:RIGHT_MODULES_MAIN:weather backlight-acpi alsa battery xke
 
 wm-name = i3
 
-tray-position = ${env:TRAY_POS_MAIN:none}
-tray-padding = 2
 tray-background = ${colors.BLK}
+tray-padding = 2
+tray-position = ${env:TRAY_POS_MAIN:none}
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -116,9 +116,9 @@ modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-n
 modules-center = player
 modules-right = weather alsa battery xkeyboard date powermenu
 
-tray-position = ${env:TRAY_POS_ALT:none}
-tray-padding = 2
 tray-background = ${colors.BLK}
+tray-padding = 5
+tray-position = ${env:TRAY_POS_ALT:none}
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -500,10 +500,10 @@ format-spacing = 1
 format-margin = 0
 format-background = #202431
 
-label-open = "⏻"
+label-open = "⏻ "
 label-open-foreground = ${colors.alert}
 label-open-padding = 2
-label-close = "   cancel"
+label-close = "    cancel"
 label-close-foreground = ${colors.alert}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
@@ -533,16 +533,16 @@ format-spacing = 1
 format-margin = 0
 format-background = #202431
 
-label-open = 
+label-open = " "
 label-open-padding = 2
 label-open-foreground = ${colors.alert}
-label-close = "  "
+label-close = "   "
 label-close-foreground = ${colors.alert}
-label-separator = " "
+label-separator = "|"
 
-menu-0-0 = 
+menu-0-0 = " "
 menu-0-0-exec = "caffeine kill; caffeine -a &"
-menu-0-1 = 
+menu-0-1 = " "
 menu-0-1-exec = "caffeine kill; caffeine -d &"
 menu-0-2 = "  "
 menu-0-2-exec = caffeine kill
@@ -628,6 +628,9 @@ format-overline = ${colors.BLU}
 
 [settings]
 screenchange-reload = true
+throttle-output = 5
+throttle-output-for = 10
+throttle-input-for = 30
 ;compositing-background = xor
 ;compositing-background = screen
 ;compositing-foreground = source

@@ -13,10 +13,16 @@ case $DESKTOP in
 	i3)
 	if type "xrandr" > /dev/null; then
 		for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-			if [ $m == 'eDP-1' ]; then
+			if [ $m == 'eDP-1' -o $m == 'DP-1-3' ]; then
 				export MONITOR="$m"
-				export TRAY_POS_MAIN="right"
-				export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery xkeyboard date powermenu"
+
+				if [ $m == 'eDP-1' ]; then
+					export TRAY_POS_MAIN="right"
+					export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery xkeyboard date powermenu"
+				else
+					unset TRAY_POS_MAIN
+					export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery xkeyboard date powermenu"
+				fi
 			elif [ $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
 				export EXT_MONITOR_LEFT="$m"
 				export TRAY_POS_ALT="right"
@@ -31,11 +37,11 @@ case $DESKTOP in
 esac
 
 if [ -n "$MONITOR" ]; then
-	polybar --reload center -c ~/.config/polybar/config &
+	polybar --reload center -c ~/.config/polybar/config 2>/var/log/polybar/polybar-center.log &
 fi
 if [ -n "$EXT_MONITOR_LEFT" ]; then
-	polybar --reload left -c ~/.config/polybar/config &
+	polybar --reload left -c ~/.config/polybar/config 2>/var/log/polybar/polybar-left.log &
 fi
 if [ -n "$EXT_MONITOR_RIGHT" ]; then
-	polybar --reload right -c ~/.config/polybar/config &
+	polybar --reload right -c ~/.config/polybar/config 2>/var/log/polybar/polybar-right.log &
 fi

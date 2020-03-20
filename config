@@ -361,7 +361,7 @@ type = internal/date
 interval = 5
 
 date = ${root.date}
-date-alt = " %Y-%m-%d"
+date-alt = "  %Y-%m-%d"
 
 time = " %I:%M %p"
 time-alt = " %I:%M %p"

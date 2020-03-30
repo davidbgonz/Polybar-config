@@ -16,11 +16,11 @@ case $DESKTOP in
 			if [ $m == 'eDP-1' ]; then
 				export MONITOR="$m"
 				export TRAY_POS_MAIN="right"
-				export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery xkeyboard date powermenu"
+				export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery date powermenu"
 			elif [ $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
 				export EXT_MONITOR_LEFT="$m"
 				export TRAY_POS_ALT="right"
-				export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery xkeyboard date powermenu"
+				export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"
 				unset TRAY_POS_MAIN
 			elif [ $m == 'DP-1-2' -o $m == 'DVI-I-2-2' ]; then
 				export EXT_MONITOR_RIGHT="$m"

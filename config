@@ -254,8 +254,8 @@ icon-repeat = 凌
 icon-single = 綾
 icon-consume = 羅
 
-label-song = %artist:0:12:...% - %title%
-label-song-maxlen = 30
+label-song = %artist:0:15% - %title%
+label-song-maxlen = 35
 label-song-ellipsis = true
 
 label-offline = "mpd offline"

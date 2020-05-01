@@ -1,0 +1,3 @@
+[submodule "community-scripts"]
+	path = community-scripts
+	url = https://github.com/polybar/polybar-scripts.git

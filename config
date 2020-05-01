@@ -571,7 +571,7 @@ click-left = pamac-manager --updates
 
 [module/player]
 type = custom/script
-exec = ~/.config/polybar/player-mpris-tail.py -f '{artist} - {:t25:{title}:}'
+exec = ~/.config/polybar/community-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {:t25:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped '' --icon-none ''
 exec-if = ~/.config/polybar/gpmdp-bar.sh status
 tail = true
 label = %output%

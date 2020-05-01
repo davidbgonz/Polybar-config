@@ -125,7 +125,7 @@ cursor-scroll = ns-resize
 
 #date = " %Y-%m-%d"
 date =
-gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 
+gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 30 
 
 [bar/right]
 monitor = ${env:EXT_MONITOR_RIGHT}
@@ -165,7 +165,7 @@ cursor-scroll = ns-resize
 
 #date = " %Y-%m-%d"
 date = 
-gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 
+gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 30 
 
 [module/xwindow]
 type = internal/xwindow
@@ -571,7 +571,7 @@ click-left = pamac-manager --updates
 
 [module/player]
 type = custom/script
-exec = ~/.config/polybar/community-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {:t25:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped '' --icon-none ''
+exec = ~/.config/polybar/community-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {:t35:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped '' --icon-none ''
 exec-if = ~/.config/polybar/gpmdp-bar.sh status
 tail = true
 label = %output%

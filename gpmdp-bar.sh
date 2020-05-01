@@ -3,7 +3,7 @@
 JSON_STORE=$(cat ~/.config/Google\ Play\ Music\ Desktop\ Player/json_store/playback.json)
 
 if [[ $1 = "status" ]]; then
-    if [ ! -z "$(playerctl -l)" ]; then
+    if [ -n "$(playerctl -l | grep google_play_music_desktop_player)" ]; then
     	if [ "$(echo "$JSON_STORE" | jq '.song.title')" != null ]; then
             exit 0 
         else

@@ -67,7 +67,7 @@ font-6 = "xos4 Terminus:pixelsize=12;1"
 font-7 = "Weather Icons:pixelsize=8;2"
 font-8 = "material\-wifi:size=10;2"
 
-modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
+modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle mpd
 modules-center = player 
 modules-right = ${env:RIGHT_MODULES_MAIN:weather backlight-acpi alsa battery date powermenu}
 
@@ -112,7 +112,7 @@ font-6 = "xos4 Terminus:pixelsize=12;1"
 font-7 = "Weather Icons:pixelsize=8;1"
 font-8 = "material\-wifi:size=10;2"
 
-modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
+modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle mpd
 modules-center = player
 modules-right = weather alsa battery date powermenu
 
@@ -156,7 +156,7 @@ font-6 = "xos4 Terminus:size=12;1"
 font-7 = "Weather Icons:size=8;1"
 font-8 = "material\-wifi:size=10;2"
 
-modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle
+modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle mpd
 modules-center = player 
 modules-right = weather alsa eth wlan battery date caffeine
 
@@ -241,19 +241,30 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <icon-prev>  <toggle>  <icon-next>  <icon-consume>  <icon-random>  <bar-progress> <label-song>
 format-offline = <label-offline>
 
-icon-prev = 
+icon-prev = 玲
 icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-play = 契
+icon-pause = 
+icon-next = 怜
+icon-random = 咽
+icon-repeat = 凌
+icon-single = 綾
+icon-consume = 羅
 
-label-song-maxlen = 25
+label-song = %artist:0:12:...% - %title%
+label-song-maxlen = 30
 label-song-ellipsis = true
 
 label-offline = "mpd offline"
+
+toggle-off-foreground = #545A6F
+bar-progress-width = 30
+bar-progress-indicator = %{T7}│%{T-}
+bar-progress-fill = %{T7}─%{T-}
+bar-progress-empty = %{F#545A6F}%{T7}─%{T-}%{F-}
 
 [module/xbacklight]
 type = internal/xbacklight
@@ -571,7 +582,7 @@ click-left = pamac-manager --updates
 
 [module/player]
 type = custom/script
-exec = ~/.config/polybar/community-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{icon} {artist} - {:t35:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped ''
+exec = ~/.config/polybar/community-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{artist} - {:t20:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped '' --icon-none ''
 exec-if = ~/.config/polybar/gpmdp-bar.sh status
 tail = true
 label = %output%

@@ -374,8 +374,9 @@ interval = 5
 date = ${root.date}
 date-alt = "  %Y-%m-%d"
 
-time = " %I:%M %p"
-time-alt = " %I:%M %p"
+;time = " %I:%M %p"
+time = " %H:%M"
+time-alt = " %H:%M"
 
 format-prefix-foreground = ${colors.foreground-alt}
 

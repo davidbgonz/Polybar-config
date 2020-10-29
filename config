@@ -435,10 +435,10 @@ adapter = AC0
 full-at = 98
 
 format-charging = %{A1:tlpui:}<animation-charging> <label-charging>%{A}
-format-charging-overline = ${colors.RED}
+format-charging-overline = ${colors.YLW}
 
 format-discharging = %{A1:tlpui:}<ramp-capacity> <label-discharging>%{A}
-format-discharging-overline = ${colors.YLW}
+format-discharging-overline = ${colors.FG}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.GRN}

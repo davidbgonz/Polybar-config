@@ -45,14 +45,14 @@ height = 27
 radius = 5
 fixed-center = false
 
-background = ${colors.background}
-foreground = ${colors.foreground}
+background = ${colors.BG}
+foreground = ${colors.FG}
 
 line-size = 3
 line-color = #f00
 
 border-top-size = 10
-border-right-size = 10
+border-right-size = ${env:BORDER_RIGHT_SIZE_MAIN:10}
 border-left-size = 10
 border-color = #00000000
 
@@ -98,7 +98,7 @@ line-size = 3
 line-color = #f00
 
 border-top-size = 10
-border-right-size = 10
+border-right-size = ${env:BORDER_RIGHT_SIZE_ALT:10}
 border-left-size = 10
 border-color = #00000000
 
@@ -119,7 +119,7 @@ modules-center = player
 modules-right = weather alsa battery date powermenu
 
 tray-background = ${colors.BLK}
-tray-padding = 5
+tray-padding = 2
 tray-position = ${env:TRAY_POS_ALT:none}
 
 cursor-click = pointer
@@ -258,7 +258,7 @@ icon-single = 綾
 icon-consume = 羅
 
 label-song = %artist:0:15% - %title%
-label-song-maxlen = 35
+label-song-maxlen = 55
 label-song-ellipsis = true
 
 label-offline = "mpd offline"
@@ -278,6 +278,7 @@ output = eDP-1
 
 format = <ramp> <bar>
 label = %percentage%%
+enable-scroll = true
 
 ramp-font = 8
 ramp-0 = 
@@ -434,13 +435,13 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC0
-full-at = 94
+#full-at = 94
 
 format-charging = %{A1:tlpui:}<animation-charging> <label-charging>%{A}
 format-charging-overline = ${colors.YLW}
 
 format-discharging = %{A1:tlpui:}<ramp-capacity> <label-discharging>%{A}
-format-discharging-overline = ${colors.FG}
+#format-discharging-overline = ${colors.FG}
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.GRN}

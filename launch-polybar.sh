@@ -23,7 +23,7 @@ case $DESKTOP in
 					unset TRAY_POS_MAIN
 					export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"
 				fi
-			elif [ $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
+			elif [ $m == 'DP-1' -o $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
 				export EXT_MONITOR_LEFT="$m"
 				export TRAY_POS_ALT="right"
 				export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"

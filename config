@@ -52,7 +52,7 @@ line-size = 3
 line-color = #f00
 
 border-top-size = 10
-border-right-size = 10
+border-right-size = ${env:BORDER_RIGHT_SIZE_MAIN:10}
 border-left-size = 10
 border-color = #00000000
 
@@ -98,7 +98,7 @@ line-size = 3
 line-color = #f00
 
 border-top-size = 10
-border-right-size = 10
+border-right-size = ${env:BORDER_RIGHT_SIZE_ALT:10}
 border-left-size = 10
 border-color = #00000000
 
@@ -119,7 +119,7 @@ modules-center = player
 modules-right = weather alsa battery date powermenu
 
 tray-background = ${colors.BLK}
-tray-padding = 5
+tray-padding = 2
 tray-position = ${env:TRAY_POS_ALT:none}
 
 cursor-click = pointer
@@ -452,7 +452,7 @@ format-full-overline = ${colors.GRN}
 #ramp-capacity-1 = 
 #ramp-capacity-2 = 
 #ramp-capacity-3 = 
-#ramp-capacity-4 =
+#ramp-capacity-4 = 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.RED}
 ramp-capacity-1 = 

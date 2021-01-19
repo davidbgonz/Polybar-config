@@ -18,20 +18,20 @@ case $DESKTOP in
 
                 if [ $m == 'eDP-1' ]; then
                     export TRAY_POS_MAIN="right"
-                    export BORDER_RIGHT_SIZE_MAIN=5
+                    #export BORDER_RIGHT_SIZE_MAIN=5
                     export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery date powermenu"
                 else
                     unset TRAY_POS_MAIN
-                    unset BORDER_RIGHT_SIZE_MAIN
+                    #unset BORDER_RIGHT_SIZE_MAIN
                     export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"
                 fi
             elif [ $m == 'DP-1' -o $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
                 export EXT_MONITOR_LEFT="$m"
                 export TRAY_POS_ALT="right"
-                export BORDER_RIGHT_SIZE_ALT=5
+                #export BORDER_RIGHT_SIZE_ALT=5
                 export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"
                 unset TRAY_POS_MAIN
-                unset BORDER_RIGHT_SIZE_MAIN
+                #unset BORDER_RIGHT_SIZE_MAIN
             elif [ $m == 'DP-1-2' -o $m == 'DVI-I-2-2' ]; then
                 export EXT_MONITOR_RIGHT="$m"
             fi

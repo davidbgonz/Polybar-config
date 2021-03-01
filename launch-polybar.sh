@@ -6,12 +6,13 @@ killall -q polybar
 while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 
 DESKTOP=$(echo $DESKTOP_SESSION)
-
 case $DESKTOP in
     i3)
     if type "xrandr" > /dev/null; then
-        for m in $(xrandr --query | grep " connected"); do
-            MONITOR_NAME=$(cut -d" " -f1 <<< $m)
+        ACTIVE_MONITORS=($(xrandr --query | grep ' connected' | sed 's/\s/_/g'))
+        for m in "${ACTIVE_MONITORS[@]}"; do
+            MONITOR_NAME=$(cut -d"_" -f1 <<< $m)
+            echo $MONITOR_NAME
             if [ $MONITOR_NAME == 'eDP-1' -o $MONITOR_NAME == 'DP-1-3' ]; then
                 export MONITOR="$MONITOR_NAME"
 
@@ -29,9 +30,13 @@ case $DESKTOP in
                 unset TRAY_POS_MAIN
             elif [ $MONITOR_NAME == 'DP-1-2' -o $MONITOR_NAME == 'DVI-I-2-2' ]; then
                 export EXT_MONITOR_RIGHT="$MONITOR_NAME"
-                if [[ $(sed -E 's/.*[[:digit:]]{1,4}x[[:digit:]]{1,4}+[[:digit:]]{1,4}+[[:digit:]]{1,4} (right|left).*/\1/' <<< $m) ]]; then
+                ORIENTATION=$(sed -E 's/.*[[:digit:]]{1,4}x[[:digit:]]{1,4}\+[[:digit:]]{1,4}\+[[:digit:]]{1,4}_(left|right).*/\1/' <<< $m)
+                if [ "$ORIENTATION" = "left" ] || [ "$ORIENTATION" = "right" ]; then
                     export LEFT_MODULES_EXT_RIGHT_VERT="i3 archUpdates trash"
-                    export CENTER_MODULES_EXT_RIGHT_VERT=""
+                    export CENTER_MODULES_EXT_RIGHT_VERT=" "
+                else
+                    unset LEFT_MODULES_EXT_RIGHT_VERT
+                    unset CENTER_MODULES_EXT_RIGHT_VERT
                 fi
             fi
         done

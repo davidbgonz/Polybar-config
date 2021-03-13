@@ -82,7 +82,6 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 date =
-#gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 30
 
 [bar/left]
 monitor = ${env:EXT_MONITOR_LEFT}
@@ -127,7 +126,6 @@ cursor-scroll = ns-resize
 
 date = "  %Y-%m-%d"
 #date =
-#gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 30
 
 [bar/right]
 monitor = ${env:EXT_MONITOR_RIGHT}
@@ -169,7 +167,6 @@ cursor-scroll = ns-resize
 
 #date = " %Y-%m-%d"
 date =
-#gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 30
 
 [module/xwindow]
 type = internal/xwindow
@@ -588,54 +585,12 @@ click-left = pamac-manager --updates
 [module/player]
 type = custom/script
 exec = ~/.config/polybar/community-scripts/polybar-scripts/player-mpris-tail/player-mpris-tail.py -f '{artist} - {:t20:{title}:}' --icon-playing '' --icon-paused '' --icon-stopped '' --icon-none ''
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
 tail = true
 label = %output%
 click-left = ~/.config/polybar/playerCtrl.sh previous
 click-right = ~/.config/polybar/playerCtrl.sh next
 click-middle = ~/.config/polybar/playerCtrl.sh play-pause
 ;label-maxlen = 50
-
-[module/gpmdp-bar]
-type = custom/script
-exec = ${root.gpmdp-bar-command}
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
-interval = 1
-
-[module/gpmdp-prev]
-type = custom/script
-exec = ~/.config/polybar/gpmdp-ctrl.sh setPrev
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
-click-left = ~/.config/polybar/gpmdp-ctrl.sh prev
-interval = 1
-
-[module/gpmdp-playPause]
-type = custom/script
-exec = ~/.config/polybar/gpmdp-ctrl.sh setPlayPause
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
-click-left = ~/.config/polybar/gpmdp-ctrl.sh playPause
-interval = 1
-
-[module/gpmdp-next]
-type = custom/script
-exec = ~/.config/polybar/gpmdp-ctrl.sh setNext
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
-click-left = ~/.config/polybar/gpmdp-ctrl.sh next
-interval = 1
-
-[module/gpmdp-repeat]
-type = custom/script
-exec = ~/.config/polybar/gpmdp-ctrl.sh setRepeat
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
-click-left = ~/.config/polybar/gpmdp-ctrl.sh toggleRepeat
-interval = 1
-
-[module/gpmdp-shuffle]
-type = custom/script
-exec = ~/.config/polybar/gpmdp-ctrl.sh setShuffle
-exec-if = ~/.config/polybar/gpmdp-bar.sh status
-click-left = ~/.config/polybar/gpmdp-ctrl.sh toggleShuffle
-interval = 1
 
 [module/eth]
 type = custom/script

@@ -161,7 +161,6 @@ modules-left = ${env:LEFT_MODULES_EXT_RIGHT_VERT:i3 archUpdates trash mpd}
 modules-center = ${env:CENTER_MODULES_EXT_RIGHT_VERT:player}
 modules-right = weather alsa eth wlan battery date powermenu
 
-
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -433,7 +432,6 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 type = internal/battery
 battery = BAT0
 adapter = AC0
-#full-at = 94
 
 format-charging = %{A1:tlpui:}<animation-charging> <label-charging>%{A}
 format-charging-overline = ${colors.YLW}
@@ -445,11 +443,6 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.GRN}
 format-full-overline = ${colors.GRN}
 
-#ramp-capacity-0 = 
-#ramp-capacity-1 = 
-#ramp-capacity-2 = 
-#ramp-capacity-3 = 
-#ramp-capacity-4 = 
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = ${colors.RED}
 ramp-capacity-1 = 
@@ -457,7 +450,7 @@ ramp-capacity-1-foreground = ${colors.RED}
 ramp-capacity-2 = 
 ramp-capacity-2-foreground = ${colors.RED}
 ramp-capacity-3 = 
-ramp-capacity-3-foreground = ${colors.RED}
+ramp-capacity-3-foreground = ${colors.YLW}
 ramp-capacity-4 = 
 ramp-capacity-4-foreground = ${colors.YLW}
 ramp-capacity-5 = 
@@ -471,11 +464,6 @@ ramp-capacity-10 = 
 ramp-capacity-10-foreground = ${colors.GRN}
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-#animation-charging-0 = 
-#animation-charging-1 = 
-#animation-charging-2 = 
-#animation-charging-3 = 
-#animation-charging-4 = 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 

@@ -6,34 +6,38 @@ killall -q polybar
 while pgrep -u $UID -x polybar > /dev/null; do sleep 1; done
 
 DESKTOP=$(echo $DESKTOP_SESSION)
-# Right modules of main monitor change depending on monitor setup
-RIGHT_MODULES_MAIN=""
-
 case $DESKTOP in
     i3)
     if type "xrandr" > /dev/null; then
-        for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
-            if [ $m == 'eDP-1' -o $m == 'DP-1-3' ]; then
-                export MONITOR="$m"
+        ACTIVE_MONITORS=($(xrandr --query | grep ' connected' | sed 's/\s/_/g'))
+        for m in "${ACTIVE_MONITORS[@]}"; do
+            MONITOR_NAME=$(cut -d"_" -f1 <<< $m)
+            echo $MONITOR_NAME
+            if [ $MONITOR_NAME == 'eDP-1' -o $MONITOR_NAME == 'DP-1-3' ]; then
+                export MONITOR="$MONITOR_NAME"
 
-                if [ $m == 'eDP-1' ]; then
+                if [ $MONITOR_NAME == 'eDP-1' ]; then
                     export TRAY_POS_MAIN="right"
-                    export BORDER_RIGHT_SIZE_MAIN=5
                     export RIGHT_MODULES_MAIN="weather backlight-acpi alsa battery date powermenu"
                 else
                     unset TRAY_POS_MAIN
-                    unset BORDER_RIGHT_SIZE_MAIN
                     export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"
                 fi
-            elif [ $m == 'DP-1' -o $m == 'DP-1-1' -o $m == 'DVI-I-1-1' -o $m == 'HDMI-1' ]; then
-                export EXT_MONITOR_LEFT="$m"
+            elif [ $MONITOR_NAME == 'DP-1' -o $MONITOR_NAME == 'DP-1-1' -o $MONITOR_NAME == 'DVI-I-1-1' -o $MONITOR_NAME == 'HDMI-1' ]; then
+                export EXT_MONITOR_LEFT="$MONITOR_NAME"
                 export TRAY_POS_ALT="right"
-                export BORDER_RIGHT_SIZE_ALT=5
                 export RIGHT_MODULES_MAIN="weather backlight-acpi eth wlan alsa battery date powermenu"
                 unset TRAY_POS_MAIN
-                unset BORDER_RIGHT_SIZE_MAIN
-            elif [ $m == 'DP-1-2' -o $m == 'DVI-I-2-2' ]; then
-                export EXT_MONITOR_RIGHT="$m"
+            elif [ $MONITOR_NAME == 'DP-1-2' -o $MONITOR_NAME == 'DVI-I-2-2' ]; then
+                export EXT_MONITOR_RIGHT="$MONITOR_NAME"
+                ORIENTATION=$(sed -E 's/.*[[:digit:]]{1,4}x[[:digit:]]{1,4}\+[[:digit:]]{1,4}\+[[:digit:]]{1,4}_(left|right).*/\1/' <<< $m)
+                if [ "$ORIENTATION" = "left" ] || [ "$ORIENTATION" = "right" ]; then
+                    export LEFT_MODULES_EXT_RIGHT_VERT="i3 archUpdates trash"
+                    export CENTER_MODULES_EXT_RIGHT_VERT=" "
+                else
+                    unset LEFT_MODULES_EXT_RIGHT_VERT
+                    unset CENTER_MODULES_EXT_RIGHT_VERT
+                fi
             fi
         done
     fi

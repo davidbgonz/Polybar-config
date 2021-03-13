@@ -52,7 +52,7 @@ line-size = 3
 line-color = #f00
 
 border-top-size = 10
-border-right-size = ${env:BORDER_RIGHT_SIZE_MAIN:10}
+border-right-size = 10
 border-left-size = 10
 border-color = #00000000
 
@@ -98,7 +98,7 @@ line-size = 3
 line-color = #f00
 
 border-top-size = 10
-border-right-size = ${env:BORDER_RIGHT_SIZE_ALT:10}
+border-right-size = 10
 border-left-size = 10
 border-color = #00000000
 
@@ -125,8 +125,8 @@ tray-position = ${env:TRAY_POS_ALT:none}
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-#date = " %Y-%m-%d"
-date =
+date = "  %Y-%m-%d"
+#date =
 gpmdp-bar-command = ~/.config/polybar/gpmdp-bar.py 30
 
 [bar/right]
@@ -159,9 +159,10 @@ font-6 = "xos4 Terminus:size=12;1"
 font-7 = "Weather Icons:size=8;1"
 font-8 = "material\-wifi:size=10;2"
 
-modules-left = i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle mpd
-modules-center = player
-modules-right = weather alsa eth wlan battery date caffeine
+modules-left = ${env:LEFT_MODULES_EXT_RIGHT_VERT:i3 archUpdates trash gpmdp-bar gpmdp-prev gpmdp-playPause gpmdp-next gpmdp-repeat gpmdp-shuffle mpd}
+modules-center = ${env:CENTER_MODULES_EXT_RIGHT_VERT:player}
+modules-right = weather alsa eth wlan battery date powermenu
+
 
 cursor-click = pointer
 cursor-scroll = ns-resize
